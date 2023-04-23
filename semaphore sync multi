@@ -1,0 +1,46 @@
+To demonstrate the utility of semaphore in synchronization and multithreading.
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+#include <semaphore.h>
+
+// Define a global semaphore
+sem_t sem;
+
+void *worker(void *arg) {
+    // Wait on the semaphore
+    sem_wait(&sem);
+
+    // Critical section
+    printf("Thread %ld entering critical section...\n", (long)arg);
+    // Do some work
+    printf("Thread %ld exiting critical section.\n", (long)arg);
+
+    // Release the semaphore
+    sem_post(&sem);
+
+    return NULL;
+}
+
+int main(int argc, char **argv) {
+    // Initialize the semaphore with value 1 (binary semaphore)
+    sem_init(&sem, 0, 1);
+
+    // Create some worker threads
+    pthread_t t1, t2;
+    pthread_create(&t1, NULL, worker, (void*)1);
+    pthread_create(&t2, NULL, worker, (void*)2);
+
+    // Wait for the worker threads to finish
+    pthread_join(t1, NULL);
+    pthread_join(t2, NULL);
+
+    // Destroy the semaphore
+    sem_destroy(&sem);
+
+    return 0;
+}
+
+RUN:
+GCC sem.c –o test –lpthread
+./test
