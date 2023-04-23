@@ -1,0 +1,9 @@
+Vowel or Consonant
+
+read ch
+if [[ $ch == [AEIOUaeiou] ]]
+then
+echo "Vowel"
+else
+echo "Consonant"
+fi
