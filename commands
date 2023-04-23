@@ -1,0 +1,12 @@
+date        display date
+bc          basic calculator
+ls          list of file
+cal         calendar
+cd          change directory
+cd /        change to root
+cd cd ..    change to previous
+cat         create file with content
+mv          move file
+mv -v       show list of moved file
+rm          remove file
+rm *        remove all sub directory
