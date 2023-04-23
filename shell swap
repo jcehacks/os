@@ -1,0 +1,19 @@
+Shell program:
+Swapping values of two variables
+
+echo "Enter the first variable:"
+read var1
+echo "Enter the second variable:"
+read var2
+
+echo "Before swapping:"
+echo "var1 = $var1"
+echo "var2 = $var2"
+
+temp=$var1
+var1=$var2
+var2=$temp
+
+echo "After swapping:"
+echo "var1 = $var1"
+echo "var2 = $var2"
