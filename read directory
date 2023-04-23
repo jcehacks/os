@@ -1,0 +1,22 @@
+To display directory contents using read dir system call.
+#include <stdio.h>
+#include <stdlib.h>
+#include <dirent.h>
+
+int main(int argc, char *argv[])
+{
+   
+
+    char *dir_name = argv[1];
+    DIR *dir = opendir(dir_name);
+    struct dirent *entry;
+    while ((entry = readdir(dir)) != NULL) {
+        printf("%s\n", entry->d_name);
+    }
+
+
+    return 0;
+}
+RUN:
+GCC file.c  –o  ./test
+./test .
