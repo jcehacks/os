@@ -1,0 +1,7 @@
+cd change directory
+check run procedure in code
+ shell :
+ file.sh
+ chmod +x file.sh
+ ./file.sh
+ xdg-open "file name"
