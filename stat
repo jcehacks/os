@@ -1,0 +1,19 @@
+To display file status using stat system call.
+#include<stdio.h>
+#include<sys/stat.h>
+#include<string.h>
+int main()
+{
+  struct stat sfile;
+    stat("example.txt", &sfile);
+    printf("\nFile Permissions User\n");
+    printf("File size: %ld bytes\n", sfile.st_size);
+    printf("File permissions: %o\n", sfile.st_mode);
+    printf("File last access time: %s\n", ctime(&(sfile.st_atime)));
+    printf("File last modification time: %s\n", ctime(&(sfile.st_mtime)));
+
+    printf( (sfile.st_mode & S_IRUSR) ? "r" : "-");
+    printf( (sfile.st_mode & S_IWUSR) ? "w" : "-");
+    printf( (sfile.st_mode & S_IXUSR) ? "x" : "-");
+    
+}
