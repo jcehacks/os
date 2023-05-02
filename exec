@@ -19,3 +19,10 @@ int main()
 {
 	printf("I am EXEC.c called by execv() ");
 }
+/*
+RUN METHOD:
+gcc -o EXEC EXEC.c
+gcc -o execDemo execDemo.c
+./execDemo
+
+*/
