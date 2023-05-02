@@ -1,4 +1,4 @@
-To load an executable program in a child processes exec system call.
+//To load an executable program in a child processes exec system call.
 //execDemo.c  FILE ONE
 #include<stdio.h>
 #include<stdlib.h>
@@ -12,7 +12,7 @@ int main()
 	
 	return 0;
 }
-FILE TWO
+//FILE TWO
 //EXEC.c
 #include<stdio.h>
 int main()
